@@ -6,8 +6,8 @@ from Writer.fontManager import Writer
 from Box.box import box
 
 class MainGame:
-    def __init__(self, h=640, w=640, border=20 , border_color=(55,55,55)):
-        self.name = "temp try"
+    def __init__(self,name, h=640, w=640, border=20 , border_color=(55,55,55)):
+        self.name = name
 
         self.h = h
         self.w = w
@@ -37,7 +37,6 @@ class MainGame:
             elif self.score != None:
                 if self.description == "Lose":
                     self.show_bombs()
-                    cv2.destroyAllWindows()
                 
                 return {"description": self.description, "score" : self.score}
 
@@ -120,7 +119,6 @@ class MainGame:
         while not self.close:
             cv2.waitKey(100)
 
-        cv2.destroyAllWindows()
 
 
 
